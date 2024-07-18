@@ -1,1 +1,18 @@
-<p>student works!</p>
+<div>
+    <h2>Student Details</h2>
+  
+    <label for="rollNoInput">Roll No: </label>
+    <input type="text" id="rollNoInput" #rollNoInput>
+    <button (click)="fetchStudentDetails(rollNoInput.value)">Fetch Details</button>
+  
+    <div [style.display]="student ? 'block' : 'none'">
+      <h3>Details for Roll No: {{ student.rollNo }}</h3>
+      <p><strong>Name:</strong> {{ student.name }}</p>
+      <p><strong>Marks:</strong> {{ student.marks }}</p>
+    </div>
+  
+    <div [style.display]="student === null && searched ? 'block' : 'none'">
+      <p>No student found with the given roll number.</p>
+    </div>
+  </div>
+  
