@@ -1,1 +1,23 @@
-<p>teacher works!</p>
+<div>
+    <h2>Teacher Dashboard</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Roll No</th>
+          <th>Name</th>
+          <th>Marks</th>
+        </tr>
+      </thead>
+      <tbody [innerHTML]="getStudentRows()">
+      </tbody>
+    </table>
+  
+    <h3>Add Student</h3>
+    <div>
+      <label>Roll No: <input type="text" #rollNoInput></label>
+      <label>Name: <input type="text" #nameInput></label>
+      <label>Marks: <input type="number" #marksInput></label>
+      <button (click)="addStudent(rollNoInput.value, nameInput.value, marksInput.value)">Add</button>
+    </div>
+  </div>
+  
